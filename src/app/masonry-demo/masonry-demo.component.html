@@ -1,0 +1,53 @@
+<div class="bg">
+  <nav class="navbar navbar-expand-sm navbar-custom">
+    <a href="/" class="navbar-brand">Mini-Pinterest</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCustom">
+      <i class="fa fa-bars fa-lg py-1 text-white"></i>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarCustom">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">User</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Logout</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Others
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" href="#">Help</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container mt-md-4">
+  <div class="row col-md-12">
+    <button (click)="addText()" type="button" class="btn btn-default">Add text brick</button>
+    <button (click)="addImage()" type="button" class="btn btn-outline-success">Add image brick</button>
+  </div>
+  <masonry [options]="options" [useImagesLoaded]="true"
+           fxLayout="row" fxLayout.xs="column"
+           fxLayoutAlign="start"
+           fxLayoutGap="4px"
+           fxLayoutGap.xs="0" class="row col-md-12 col-sm-12">
+    <mat-card masonry-brick *ngFor="let brick of bricks" fxFlex="31" fxFlex.xs="auto" class="col-md-4 col-sm-12 mt-2">
+      <img *ngIf="brick.image" src="{{brick.image}}" class="card-img">
+      <p *ngIf="brick.text">{{brick.text}}</p>
+      <button (click)="remove(brick)">Remove</button>
+    </mat-card>
+  </masonry>
+</div>
+
