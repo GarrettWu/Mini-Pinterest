@@ -117,6 +117,10 @@ module.exports = function (app) {
       });
   }
 
+  function imageToUrl(){
+
+  }
+
   function serializeUser(user, done) {
     done(null, user);
   }

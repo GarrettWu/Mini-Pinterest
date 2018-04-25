@@ -210,6 +210,19 @@ export class MasonryDemoComponent implements OnInit, AfterViewInit {
       ).subscribe(() => this.loadMobileContent());
   }
 
+  lorem = [
+    'assets/images/demopic(0).jpg',
+    'assets/images/demopic(1).jpg',
+    'assets/images/demopic(2).jpg',
+    'assets/images/demopic(3).jpg',
+    'assets/images/demopic(4).jpg',
+    'assets/images/demopic(5).jpg',
+    'assets/images/demopic(6).jpg',
+    'assets/images/demopic(7).jpg',
+    'assets/images/demopic(8).jpg',
+    'assets/images/demopic(9).jpg'
+  ];
+
   // 监听布局的变化，重新加载内容
   loadMobileContent() {
     console.log('loadMobileContent');
@@ -244,26 +257,26 @@ export class MasonryDemoComponent implements OnInit, AfterViewInit {
   }
 
   addImage() {
-    const lorem = [
-      'assets/images/demopic(0).jpg',
-      'assets/images/demopic(1).jpg',
-      'assets/images/demopic(2).jpg',
-      'assets/images/demopic(3).jpg',
-      'assets/images/demopic(4).jpg',
-      'assets/images/demopic(5).jpg',
-      'assets/images/demopic(6).jpg',
-      'assets/images/demopic(7).jpg',
-      'assets/images/demopic(8).jpg',
-      'assets/images/demopic(9).jpg'
-    ];
+    // const lorem = [
+    //   'assets/images/demopic(0).jpg',
+    //   'assets/images/demopic(1).jpg',
+    //   'assets/images/demopic(2).jpg',
+    //   'assets/images/demopic(3).jpg',
+    //   'assets/images/demopic(4).jpg',
+    //   'assets/images/demopic(5).jpg',
+    //   'assets/images/demopic(6).jpg',
+    //   'assets/images/demopic(7).jpg',
+    //   'assets/images/demopic(8).jpg',
+    //   'assets/images/demopic(9).jpg'
+    // ];
       // 'http://www.zhlzw.com/UploadFiles/Article_UploadFiles/201204/20120412123916285.jpg',
       // 'http://img4.imgtn.bdimg.com/it/u=1293919120,3114443152&fm=27&gp=0.jpg',
       // 'http://pic71.nipic.com/file/20150610/13549908_104823135000_2.jpg',
       // 'http://img.taopic.com/uploads/allimg/121115/240487-12111520035993.jpg'
 
-    const index = Math.floor(Math.random() * lorem.length);
+    // const index = Math.floor(Math.random() * this.lorem.length);
 
-    this.bricks.push({image: lorem[index]});
+    this.bricks.push({image: 'assets/images/demopic(red).jpg'});
   }
 
   remove(brick) {
@@ -276,31 +289,19 @@ export class MasonryDemoComponent implements OnInit, AfterViewInit {
       this.onWindowScroll();
     });
 
-    // 初始化
-    this.articleService.list(this.page).subscribe(articles => {
-      this.jsonBean = articles;
-      // console.log(this.articleList.length);
-      for (const article of this.jsonBean.data) {
-        this.bricks.push({text: article.title + article.summary});
-      }
-    });
+    // // 初始化
+    // this.articleService.list(this.page).subscribe(articles => {
+    //   this.jsonBean = articles;
+    //   // console.log(this.articleList.length);
+    //   for (const article of this.jsonBean.data) {
+    //     this.bricks.push({text: article.title + article.summary});
+    //   }
+    // });
 
-    const lorem = [
-      'assets/images/demopic(0).jpg',
-      'assets/images/demopic(1).jpg',
-      'assets/images/demopic(2).jpg',
-      'assets/images/demopic(3).jpg',
-      'assets/images/demopic(4).jpg',
-      'assets/images/demopic(5).jpg',
-      'assets/images/demopic(6).jpg',
-      'assets/images/demopic(7).jpg',
-      'assets/images/demopic(8).jpg',
-      'assets/images/demopic(9).jpg'
-    ];
 
     let i = 0;
     while (i < 10) {
-      this.bricks.push({image: lorem[i]});
+      this.bricks.push({image: this.lorem[i]});
       i++;
     }
   }

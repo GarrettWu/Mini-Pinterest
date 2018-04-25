@@ -1,95 +1,96 @@
-<div class="bg">
-  <div class="container-fluid">
-    <!--<form class="form-signin" action="profile.html">-->
-    <nav class="navbar navbar-expand-md navbar-default">
-      <div class="container">
-        <div class="row col-md-12">
+<!--<div class="bg">-->
+  <!--<div class="container-fluid">-->
+    <!--&lt;!&ndash;<form class="form-signin" action="profile.html">&ndash;&gt;-->
+    <!--<nav class="navbar navbar-expand-md navbar-default">-->
+      <!--<div class="container">-->
+        <!--<div class="row col-md-12">-->
 
 
-          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav ml-auto">
-              <li class="navbar-nav">
-                <a class="nav-link" href="#"> Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="navbar-nav">
-                <!--这里使用routerLink不行，难道是这个index.html不受angular5模板控制？-->
-                <a class="nav-link" href="/register">Register</a>
-              </li>
-              <li cclass="navbar-nav">
-                <a class="nav-link" href="#">About Us</a>
-              </li>
-
-              <!--<li class="nav-item dropdown">-->
-              <!--<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"-->
-              <!--aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
-              <!--<div class="dropdown-menu" aria-labelledby="dropdown01">-->
-              <!--<a class="dropdown-item" href="#">Action</a>-->
-              <!--<a class="dropdown-item" href="#">Another action</a>-->
-              <!--<a class="dropdown-item" href="#">Something else here</a>-->
-              <!--</div>-->
+          <!--<div class="collapse navbar-collapse" id="navbarsExampleDefault">-->
+            <!--<ul class="navbar-nav ml-auto">-->
+              <!--<li class="navbar-nav">-->
+                <!--<a class="nav-link" href="#"> Home <span class="sr-only">(current)</span></a>-->
               <!--</li>-->
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <br>
-    <br>
-    <!--Use structural directive *ngIf to display error message on top of the page
-    if the input credentials do not march -->
-    <div *ngIf="errorFlag"
-         class="alert alert-danger">
-      {{errorMsg}}
-    </div>
-    <div class="login">
-      <h1 class="form-signin-heading align-content-center">Login</h1>
-      <br>
-      <form (ngSubmit) = "login()" #f="ngForm">
-        <br>
-        <div class="form-group">
-          <input type="text"
-                 id="username"
-                 class="form-control"
-                 placeholder="username"
-                 ngModel
-                 required
-                 #username="ngModel"
-                 name="username"
-                 data-toggle="tooltip"
-                 title="Enter your username" required autofocus/>
-          <span class="help-block" *ngIf="!username.valid && username.touched">
-          Please enter username!
-        </span>
-        </div>
+              <!--<li class="navbar-nav">-->
+                <!--&lt;!&ndash;这里使用routerLink不行，难道是这个index.html不受angular5模板控制？&ndash;&gt;-->
+                <!--<a class="nav-link" href="/register">Register</a>-->
+              <!--</li>-->
+              <!--<li cclass="navbar-nav">-->
+                <!--<a class="nav-link" href="#">About Us</a>-->
+              <!--</li>-->
 
-        <div class="form-group">
-          <input type="password"
-                 id="inputPassword"
-                 class="form-control"
-                 placeholder="password"
-                 ngModel
-                 required
-                 #password="ngModel"
-                 name="password"
-                 data-toggle="tooltip"
-                 title="Enter your passowrd" required autofocus/>
-          <span class="help-block" *ngIf="!username.valid && username.touched">
-          Please enter password!
-        </span>
-        </div>
+              <!--&lt;!&ndash;<li class="nav-item dropdown">&ndash;&gt;-->
+              <!--&lt;!&ndash;<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"&ndash;&gt;-->
+              <!--&lt;!&ndash;aria-haspopup="true" aria-expanded="false">Dropdown</a>&ndash;&gt;-->
+              <!--&lt;!&ndash;<div class="dropdown-menu" aria-labelledby="dropdown01">&ndash;&gt;-->
+              <!--&lt;!&ndash;<a class="dropdown-item" href="#">Action</a>&ndash;&gt;-->
+              <!--&lt;!&ndash;<a class="dropdown-item" href="#">Another action</a>&ndash;&gt;-->
+              <!--&lt;!&ndash;<a class="dropdown-item" href="#">Something else here</a>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;</li>&ndash;&gt;-->
+            <!--</ul>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</nav>-->
+    <!--<br>-->
+    <!--<br>-->
+    <!--&lt;!&ndash;Use structural directive *ngIf to display error message on top of the page-->
+    <!--if the input credentials do not march &ndash;&gt;-->
+    <!--<div *ngIf="errorFlag"-->
+         <!--class="alert alert-danger">-->
+      <!--{{errorMsg}}-->
+    <!--</div>-->
+    <!--<div class="login">-->
+      <!--<h1 class="form-signin-heading align-content-center">Login</h1>-->
+      <!--<br>-->
+      <!--<form (ngSubmit) = "login()" #f="ngForm">-->
+        <!--<br>-->
+        <!--<div class="form-group">-->
+          <!--<input type="text"-->
+                 <!--id="username"-->
+                 <!--class="form-control"-->
+                 <!--placeholder="username"-->
+                 <!--ngModel-->
+                 <!--required-->
+                 <!--#username="ngModel"-->
+                 <!--name="username"-->
+                 <!--data-toggle="tooltip"-->
+                 <!--title="Enter your username" required autofocus/>-->
+          <!--<span class="help-block" *ngIf="!username.valid && username.touched">-->
+          <!--Please enter username!-->
+        <!--</span>-->
+        <!--</div>-->
 
-        <div class="form-group form-check checkbox lead">
-          <label class="form-check-label input-md">
-            <input type="checkbox"
-                   value="remember-me"
-                   class="form-check-input"/> Remember me </label>
-        </div>
-        <br>
-        <button class="btn btn-primary btn-block"
-                type="submit"
-                [disabled]="!f.valid">Login</button>
+        <!--<div class="form-group">-->
+          <!--<input type="password"-->
+                 <!--id="inputPassword"-->
+                 <!--class="form-control"-->
+                 <!--placeholder="password"-->
+                 <!--ngModel-->
+                 <!--required-->
+                 <!--#password="ngModel"-->
+                 <!--name="password"-->
+                 <!--data-toggle="tooltip"-->
+                 <!--title="Enter your passowrd" required autofocus/>-->
+          <!--<span class="help-block" *ngIf="!username.valid && username.touched">-->
+          <!--Please enter password!-->
+        <!--</span>-->
+        <!--</div>-->
 
-      </form>
-    </div>
-  </div>
-</div>
+        <!--<div class="form-group form-check checkbox lead">-->
+          <!--<label class="form-check-label input-md">-->
+            <!--<input type="checkbox"-->
+                   <!--value="remember-me"-->
+                   <!--class="form-check-input"/> Remember me </label>-->
+        <!--</div>-->
+        <!--<br>-->
+        <!--<button class="btn btn-primary btn-block"-->
+                <!--type="submit"-->
+                <!--[disabled]="!f.valid">Login</button>-->
+
+      <!--</form>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<span class="oi" data-glyph="thumb-down">tet</span>

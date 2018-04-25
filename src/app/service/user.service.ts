@@ -17,7 +17,7 @@ export class UserService {
   }
 
   createUser(user: any): Observable<JsonBean> {
-    const url = 'http://localhost:8080/api/register';
+    const url = 'http://localhost:4200/api/register';
     return this.httpClient.post(url, user, Consts.JSON);
   }
 

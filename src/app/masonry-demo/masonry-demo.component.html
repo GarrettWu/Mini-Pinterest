@@ -46,7 +46,8 @@
     <mat-card masonry-brick *ngFor="let brick of bricks" fxFlex="31" fxFlex.xs="auto" class="col-md-4 col-sm-12 mt-2">
       <img *ngIf="brick.image" src="{{brick.image}}" class="card-img">
       <p *ngIf="brick.text">{{brick.text}}</p>
-      <button (click)="remove(brick)">Remove</button>
+      <!--<div (click)="remove(brick)"><img src="../../assets/dislike.svg" style="height: 30px"></div>-->
+      <button type="button" class="btn btn-primary" (click)="remove(brick)" style="height:50%"><i class="fas fa-minus"></i></button>
     </mat-card>
   </masonry>
 </div>
