@@ -47,7 +47,8 @@
       <img *ngIf="brick.image" src="{{brick.image}}" class="card-img">
       <p *ngIf="brick.text">{{brick.text}}</p>
       <!--<div (click)="remove(brick)"><img src="../../assets/dislike.svg" style="height: 30px"></div>-->
-      <button type="button" class="btn btn-primary" (click)="remove(brick)" style="height:50%"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-default" (click)="remove(brick)"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-default" (click)="remove(brick)"><i class="fas fa-cart-arrow-down"></i></button>
     </mat-card>
   </masonry>
 </div>
