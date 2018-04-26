@@ -1,5 +1,9 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
+<<<<<<< HEAD
 it
+=======
+
+>>>>>>> pr/1
 # compiled output
 /dist
 /dist-server
@@ -42,3 +46,13 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+<<<<<<< HEAD
+=======
+
+# Image
+/public/cs_theory
+/public/food
+/public/men_fashion
+/public/photography
+/public/women_fashion
+>>>>>>> pr/1
